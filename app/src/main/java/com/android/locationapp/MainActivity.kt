@@ -67,6 +67,8 @@ fun LocationDisplay(locationUtils: LocationUtils, viewModel: LocationViewModel, 
         permission ->
             if(permission[Manifest.permission.ACCESS_COARSE_LOCATION] == true && permission[Manifest.permission.ACCESS_FINE_LOCATION] == true) {
                 // I have access to the location
+
+                locationUtils.requestLocationUpdates(viewModel = viewModel)
             } else {
                 // Ask for location permission
 
